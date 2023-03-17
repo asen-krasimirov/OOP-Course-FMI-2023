@@ -29,16 +29,23 @@ void printOffers(Offer* offers, const int offersCount) {
 }
 
 void saveOfferToFile(std::ofstream& file, const Offer& offer) {
+    file.write((char*) &offer, sizeof(Offer));
+
+    /*
     file.write((const char*) offer.companyName, MAX_NAME_SIZE);
     file.write((const char*) &offer.coworkersCount, sizeof(int));
     file.write((const char*) &offer.paidVacationDays, sizeof(int));
     file.write((const char*) &offer.salary, sizeof(long long));
+    */
 }
 
 void saveOffersToFile(std::ofstream& file, const Offer* offers, const int offersCount) {
+    file.write((const char*) offers, sizeof(Offer) * offersCount);
+    /*
     for (int i = 0; i < offersCount; ++i) {
         saveOfferToFile(file, offers[i]);
     }
+    */
 }
 
 void readOffer(Offer& offer) {
@@ -56,17 +63,6 @@ void readOffer(Offer& offer) {
     std::cin >> offer.salary;
 }
 
-/*
-int getOutputFileSize(std::ofstream& file) {
-    int curPosition = file.tellp();
-    file.seekp(0, std::ios::end);
-    int size = file.tellp();
-    file.seekp(curPosition, std::ios::beg);
-
-    return size;
-}
-*/
-
 int getInputFileSize(std::ifstream& file) {
     int curPosition = file.tellg();
     file.seekg(0, std::ios::end);
@@ -76,12 +72,14 @@ int getInputFileSize(std::ifstream& file) {
     return size;
 }
 
+/*
 void readOfferFromFile(std::ifstream& file, Offer& offer) {
     file.read((char*) offer.companyName, MAX_NAME_SIZE);
     file.read((char*) &offer.coworkersCount, sizeof(int));
     file.read((char*) &offer.paidVacationDays, sizeof(int));
     file.read((char*) &offer.salary, sizeof(long long));
 }
+*/
 
 Offer* readOffersFromFile(std::ifstream& file, int& offersCount) {
     int fileSize = getInputFileSize(file);
@@ -91,9 +89,12 @@ Offer* readOffersFromFile(std::ifstream& file, int& offersCount) {
 
     Offer* offers = new Offer[offersCount];
 
+    file.read((char*) offers, sizeof(Offer) * offersCount);
+    /*
     for (int i = 0; i < offersCount; ++i) {
         readOfferFromFile(file, offers[i]);
     }
+    */
 
     return offers;
 }
