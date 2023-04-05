@@ -110,6 +110,16 @@ File &TextFilesManager::findFileByName(const char *name) {
     throw "File was not found!";
 }
 
+const File &TextFilesManager::findFileByName(const char *name) const {
+    for (int i = 0; i < _fileCount; ++i) {
+        if (std::strcmp(_files[i].getName(), name) == 0) {
+            return _files[i];
+        }
+    }
+
+    throw "File was not found!";
+}
+
 void TextFilesManager::addFile(const char *name,
                                unsigned int hours, unsigned int mins, unsigned int secs,
                                unsigned int day, unsigned int month, unsigned int year,
@@ -168,13 +178,13 @@ void TextFilesManager::changeRights(const char *name, Role role, Mode mode) {
     file.changeRoleRights(role, mode);
 }
 
-void TextFilesManager::printFileInfo(const char *name) {
-    File& file = findFileByName(name);
+void TextFilesManager::printFileInfo(const char *name) const {
+    const File& file = findFileByName(name);
     file.printMetaInfo();
 }
 
-void TextFilesManager::printFile(const char *name, Role role) {
-    File& file = findFileByName(name);
+void TextFilesManager::printFile(const char *name, Role role) const {
+    const File& file = findFileByName(name);
 
     if (!file.canRoleUseFile(role, Mode::read)) {
         throw "Error! You do not have the rights to read!";

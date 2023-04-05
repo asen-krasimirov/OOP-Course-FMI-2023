@@ -47,9 +47,9 @@ public:
 
     void changeRights(const char *name, Role role, Mode mode);
 
-    void printFileInfo(const char *name);
+    void printFileInfo(const char *name) const;
 
-    void printFile(const char *name, Role role);
+    void printFile(const char *name, Role role) const;
 
     void print() const;
 
@@ -57,6 +57,7 @@ public:
 
 private:
     File &findFileByName(const char *name);
+    const File &findFileByName(const char *name) const;
 
     void setNewContentToFile(File &file, const char *newContent,
                              unsigned int hours, unsigned int mins, unsigned int secs,
