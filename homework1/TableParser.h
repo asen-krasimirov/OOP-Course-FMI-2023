@@ -14,7 +14,7 @@ public:
     TableParser();
     explicit TableParser(const char* fileName);
 
-    void setFileName(const char *fileNme);
+    void setFileName(const char *fileName);
 
     bool addColumn(const Column& column);
     bool addColumn(const char* title);

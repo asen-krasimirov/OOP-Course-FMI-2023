@@ -62,12 +62,12 @@ namespace {
     }
 }
 
-void TableParser::setFileName(const char *fileNme) {
-    if (fileNme == nullptr) {
+void TableParser::setFileName(const char *fileName) {
+    if (fileName == nullptr) {
         return;
     }
 
-    std::strcpy(_fileName, fileNme);
+    std::strcpy(_fileName, fileName);
 }
 
 bool TableParser::addColumn(const Column& column) {
