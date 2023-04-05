@@ -52,6 +52,14 @@ Row& Column::getRowByIndex(int index) {
     return _rows[index];
 }
 
+const Row& Column::getRowByIndex(int index) const {
+    if (index < 0 || index >= _rowCount) {
+        throw "Index is out of bounds!";
+    }
+
+    return _rows[index];
+}
+
 Row& Column::getRowByName(const char* name) {
     if (name == nullptr) {
         throw "Name value is not valid!";

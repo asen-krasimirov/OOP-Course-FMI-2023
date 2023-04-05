@@ -91,6 +91,14 @@ Column& TableParser::getColumnByIndex(int index) {
     return _columns[index];
 }
 
+const Column& TableParser::getColumnByIndex(int index) const {
+    if (index < 0 || index >= _columnCount) {
+        throw "Index is out of bounds!";
+    }
+
+    return _columns[index];
+}
+
 Column& TableParser::getColumnByName(const char* name) {
     if (name == nullptr) {
         throw "Name value is not valid!";
@@ -98,6 +106,22 @@ Column& TableParser::getColumnByName(const char* name) {
 
     for (int i = 0; i < _columnCount; ++i) {
         Column& column = getColumnByIndex(i);
+        if (std::strcmp(column.getTitle(), name) == 0) {
+            return column;
+        }
+    }
+
+
+    throw "Column not found!";
+}
+
+const Column& TableParser::getColumnByName(const char* name) const {
+    if (name == nullptr) {
+        throw "Name value is not valid!";
+    }
+
+    for (int i = 0; i < _columnCount; ++i) {
+        const Column& column = getColumnByIndex(i);
         if (std::strcmp(column.getTitle(), name) == 0) {
             return column;
         }
@@ -212,7 +236,7 @@ void TableParser::setSpaces(const Alignment& alignment, unsigned whiteSpaces, un
     }
 }
 
-void TableParser::printTable() {
+void TableParser::printTable() const {
     handleHeadings(std::cout);
     handleDashes(std::cout);
 
@@ -255,11 +279,11 @@ void TableParser::changeRowName(const char* oldName, const char* columnName, con
     column.getRowByName(oldName).setValue(newValue);
 }
 
-void TableParser::printSelectedRows(const char* columnName, const char* rowValue) {
+void TableParser::printSelectedRows(const char* columnName, const char* rowValue) const {
     unsigned indexes[MAX_ROW_COUNT];
     unsigned indexesCount = 0;
 
-    Column& selectedColumn = getColumnByName(columnName);
+    const Column& selectedColumn = getColumnByName(columnName);
 
     unsigned rowCount = selectedColumn.getRowCount();
 
@@ -324,9 +348,9 @@ void TableParser::handleDash(std::ostream &out, const Alignment& alignment) cons
 
 }
 
-void TableParser::handleDashes(std::ostream &out) {
+void TableParser::handleDashes(std::ostream &out) const {
     for (int i = 0; i < _columnCount - 1; ++i) {
-        Column& column = getColumnByIndex(i);
+        const Column& column = getColumnByIndex(i);
         const Alignment& alignment = column.getAlignment();
 
         unsigned whiteSpaces = _biggestRowLen - 4;
@@ -401,10 +425,10 @@ void TableParser::handleRow(std::ostream &out, const Row& row, const Alignment& 
     out << " ";
 }
 
-void TableParser::handleRows(std::ostream &out, int index) {
+void TableParser::handleRows(std::ostream &out, int index) const {
     for (int i = 0; i < _columnCount - 1; ++i) {
-        Column& curColumn = getColumnByIndex(i);
-        Row& curRow = curColumn.getRowByIndex(index);
+        const Column& curColumn = getColumnByIndex(i);
+        const Row& curRow = curColumn.getRowByIndex(index);
         handleRow(out, curRow, curColumn.getAlignment());
     }
     out << "|";

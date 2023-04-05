@@ -27,5 +27,7 @@ public:
     bool addRow(const char* value);
 
     Row& getRowByIndex(int index);
+    const Row& getRowByIndex(int index) const;
     Row& getRowByName(const char* name);
+//    const Row& getRowByName(const char* name) const;
 };
