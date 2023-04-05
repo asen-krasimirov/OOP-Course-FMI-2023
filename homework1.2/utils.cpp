@@ -7,9 +7,3 @@ unsigned getArrLen(const char* arr) {
     }
     return len;
 }
-
-void mergeArrays(char *arr1, unsigned size1, const char *arr2) {
-    for (int i = 0; arr2[i] != '\0'; ++i) {
-        arr1[size1 + i] = arr2[i];
-    }
-}

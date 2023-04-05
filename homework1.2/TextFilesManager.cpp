@@ -153,7 +153,7 @@ void TextFilesManager::editFile(const char *name, const char *content,
     setNewContentToFile(file, content, hours, mins, secs, day, month, year);
 }
 
-void TextFilesManager::addInFile(const char *name, char *content, unsigned int hours, unsigned int mins,
+void TextFilesManager::addInFile(const char *name, const char *content, unsigned int hours, unsigned int mins,
                                  unsigned int secs, unsigned int day, unsigned int month, unsigned int year,
                                  Role role) {
     File& file = findFileByName(name);
@@ -162,9 +162,9 @@ void TextFilesManager::addInFile(const char *name, char *content, unsigned int h
         throw "Error! You do not have the rights to add to this file!";
     }
 
-    mergeArrays(content, getArrLen(content),  file.getContent());
-
-    setNewContentToFile(file, content, hours, mins, secs, day, month, year);
+//    mergeArrays(content, getArrLen(content),  file.getContent());
+    file.addContent(content);
+//    setNewContentToFile(file, content, hours, mins, secs, day, month, year);
 }
 
 void TextFilesManager::deleteFile(const char *name) {

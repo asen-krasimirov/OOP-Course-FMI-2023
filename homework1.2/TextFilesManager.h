@@ -1,5 +1,13 @@
 #include "File.h"
 
+namespace {
+    void mergeArrays(char *arr1, unsigned size1, const char *arr2) {
+        for (int i = 0; arr2[i] != '\0'; ++i) {
+            arr1[size1 + i] = arr2[i];
+        }
+    }
+}
+
 class TextFilesManager {
 private:
     File *_files = nullptr;
@@ -38,7 +46,7 @@ public:
                   unsigned day, unsigned month, unsigned year,
                   Role rights);
 
-    void addInFile(const char *name, char *content,
+    void addInFile(const char *name, const char *content,
                    unsigned hours, unsigned mins, unsigned secs,
                    unsigned day, unsigned month, unsigned year,
                    Role rights);

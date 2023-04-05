@@ -22,8 +22,11 @@ public:
          const char *accessRights);
 
     void setName(const char *name);
+
     void setContent(const char *content);
     void setContentSize(unsigned size);
+    void addContent(const char *content);
+
     void setAccessRights(const char *accessRights);
     void setCreatedTime(unsigned hours, unsigned mins, unsigned secs, unsigned day, unsigned month, unsigned year);
     void setModifiedTime(unsigned hours, unsigned mins, unsigned secs, unsigned day, unsigned month, unsigned year);

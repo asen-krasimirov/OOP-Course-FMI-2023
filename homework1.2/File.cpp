@@ -3,6 +3,13 @@
 #include "utils.h"
 #include "File.h"
 
+void mergeArrays(char *arr1, unsigned size1, const char *arr2) {
+    for (int i = 0; arr2[i] != '\0'; ++i) {
+        arr1[size1 + i] = arr2[i];
+    }
+}
+
+
 File::File(const char *name,
            unsigned hours, unsigned mins, unsigned secs,
            unsigned day, unsigned month, unsigned year,
@@ -34,6 +41,20 @@ void File::setContent(const char *content) {
     }
 
     std::strcpy(_content, content);
+    setContentSize(newContentSize);
+}
+
+void File::addContent(const char *content) {
+    unsigned newContentSize = getArrLen(content) + _contentSize;
+
+    if (content == nullptr) {
+        throw "Content value is not valid!";
+    }
+    if (newContentSize > CONTENT_MAX_SIZE) {
+        throw "Content exceeds maximum allowed size!";
+    }
+
+    mergeArrays(_content, _contentSize, content);
     setContentSize(newContentSize);
 }
 

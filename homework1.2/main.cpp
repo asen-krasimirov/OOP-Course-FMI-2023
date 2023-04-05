@@ -24,7 +24,7 @@ int main() {
 
 //    fs.editFile(inputName1, inputContent1, 14, 11, 0, 20, 3, 2023, o);  // Error! You do not have the rights to edit!
 
-    char inputContent2[CONTENT_MAX_SIZE] = "Hello, my friend!";
+    const char inputContent2[CONTENT_MAX_SIZE] = "Hello, my friend!";
     fs.addInFile(inputName1, inputContent2, 14, 13, 0, 20, 3, 2023, u); // Hello world!
                                                                         // Hello, my friend!
                                                                         // Last modified on: 14:13:00 20.03.2023
