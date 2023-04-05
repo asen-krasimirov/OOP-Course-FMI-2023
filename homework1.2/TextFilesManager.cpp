@@ -60,7 +60,12 @@ TextFilesManager::TextFilesManager(const File *files, unsigned maxFileCount) {
     setFiles(files, maxFileCount);
 }
 
-TextFilesManager::TextFilesManager(unsigned maxFileCount) : TextFilesManager(new File[maxFileCount], maxFileCount) {}
+TextFilesManager::TextFilesManager(unsigned maxFileCount) { // : TextFilesManager(new File[maxFileCount], maxFileCount)
+    const File *files = new File[maxFileCount]();
+    setMaxFileCount(maxFileCount);
+    setFiles(files, maxFileCount);
+    delete[] files;
+}
 
 TextFilesManager::TextFilesManager() : TextFilesManager(1) {}
 
@@ -88,6 +93,7 @@ void TextFilesManager::setFiles(const File *files, unsigned maxFileCount) {
 
     delete[] _files;
     copyFiles(files, maxFileCount);
+//    delete[] files;
 }
 
 void TextFilesManager::setMaxFileCount(unsigned int maxFileCount) {

@@ -6,7 +6,7 @@
 class File {
 private:
     char _name[NAME_MAX_SIZE];
-    char _content[CONTENT_MAX_SIZE];
+    char _content[CONTENT_MAX_SIZE] = "";
     char _accessRights[ACCESS_RIGHTS_SIZE] = "---------";
 
     DateTime _createdTime;
