@@ -183,7 +183,7 @@ void TextFilesManager::printFile(const char *name, Role role) {
     std::cout << file.getContent();
 }
 
-void TextFilesManager::print() {
+void TextFilesManager::print() const {
     for (int i = 0; i < _fileCount; ++i) {
         std::cout << _files[i].getName() << std::endl;
     }

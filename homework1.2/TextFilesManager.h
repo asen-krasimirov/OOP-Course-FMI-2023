@@ -51,7 +51,7 @@ public:
 
     void printFile(const char *name, Role role);
 
-    void print();
+    void print() const;
 
     void sort(SortOptions option);
 
