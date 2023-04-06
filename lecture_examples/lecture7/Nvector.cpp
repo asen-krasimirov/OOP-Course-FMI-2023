@@ -66,3 +66,16 @@ Nvector operator+(const Nvector &lhs, const Nvector &rhs) {
     return sumNvector;
 }
 
+Nvector operator-(const Nvector &lhs, const Nvector &rhs) {
+    if (lhs._size != rhs._size) {
+        throw "Nvector sizes are not the same!";
+    }
+
+    Nvector differenceNvector = lhs;
+
+    for (int i = 0; i < differenceNvector._size; ++i) {
+        differenceNvector._values[i] -= rhs._values[i];
+    }
+
+    return differenceNvector;
+}
