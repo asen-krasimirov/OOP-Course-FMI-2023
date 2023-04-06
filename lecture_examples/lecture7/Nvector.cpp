@@ -51,6 +51,18 @@ Nvector::Nvector(unsigned size) {
     _size = size;
 }
 
-//Nvector::Nvector(const int *values) {
+Nvector operator+(const Nvector &lhs, const Nvector &rhs) {
+    if (lhs._size != rhs._size) {
+        throw "Nvector sizes are not the same!";
+//        return Nvector(1);
+    }
 
-//}
+    Nvector sumNvector = lhs;
+
+    for (int i = 0; i < sumNvector._size; ++i) {
+        sumNvector._values[i] += rhs._values[i];
+    }
+
+    return sumNvector;
+}
+
