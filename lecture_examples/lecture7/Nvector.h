@@ -16,6 +16,9 @@ public:
     Nvector &operator=(const Nvector &other);
     ~Nvector();
 
+    int &operator[](int index) const;
+    int &operator[](int index);
+
     Nvector &operator*=(int scalar);
 
     friend Nvector operator+(const Nvector &lhs, const Nvector &rhs);

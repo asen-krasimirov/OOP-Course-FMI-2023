@@ -87,3 +87,11 @@ Nvector &Nvector::operator*=(int scalar) {
 
     return *this;
 }
+
+int &Nvector::operator[](int index) const {
+    return _values[index];
+}
+
+int &Nvector::operator[](int index){
+    return _values[index];
+}
