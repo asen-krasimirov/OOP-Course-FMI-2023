@@ -16,6 +16,8 @@ public:
     Nvector &operator=(const Nvector &other);
     ~Nvector();
 
+    Nvector &operator*=(int scalar);
+
     friend Nvector operator+(const Nvector &lhs, const Nvector &rhs);
     friend Nvector operator-(const Nvector &lhs, const Nvector &rhs);
 };

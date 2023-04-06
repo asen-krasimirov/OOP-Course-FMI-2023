@@ -79,3 +79,11 @@ Nvector operator-(const Nvector &lhs, const Nvector &rhs) {
 
     return differenceNvector;
 }
+
+Nvector &Nvector::operator*=(int scalar) {
+    for (int i = 0; i < _size; ++i) {
+        _values[i] *= scalar;
+    }
+
+    return *this;
+}
