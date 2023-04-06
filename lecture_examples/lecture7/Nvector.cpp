@@ -1,3 +1,4 @@
+#include <iostream>
 #include "Nvector.h"
 
 namespace {
@@ -51,6 +52,31 @@ Nvector::Nvector(unsigned size) {
     _size = size;
 }
 
+int &Nvector::operator[](int index) const {
+    return _values[index];
+}
+
+int &Nvector::operator[](int index){
+    return _values[index];
+}
+
+Nvector &Nvector::operator*=(int scalar) {
+    for (int i = 0; i < _size; ++i) {
+        _values[i] *= scalar;
+    }
+
+    return *this;
+}
+
+bool operator|=(const Nvector &lhs, const Nvector &rhs) {
+    return (lhs % rhs) == 0;
+}
+
+// TODO: add are parallel check
+//bool Nvector::operator||(const Nvector &rhs) {
+//    return (*this % rhs) == 0;
+//}
+
 Nvector operator+(const Nvector &lhs, const Nvector &rhs) {
     if (lhs._size != rhs._size) {
         throw "Nvector sizes are not the same!";
@@ -80,18 +106,38 @@ Nvector operator-(const Nvector &lhs, const Nvector &rhs) {
     return differenceNvector;
 }
 
-Nvector &Nvector::operator*=(int scalar) {
-    for (int i = 0; i < _size; ++i) {
-        _values[i] *= scalar;
+int operator%(const Nvector &lhs, const Nvector &rhs) {
+    if (lhs._size != rhs._size) {
+        throw "Nvector sizes are not the same!";
     }
 
-    return *this;
+    int result = 0;
+
+    for (int i = 0; i < lhs._size; ++i) {
+        result += lhs._values[i] * rhs._values[i];
+    }
+
+    return result;
 }
 
-int &Nvector::operator[](int index) const {
-    return _values[index];
+unsigned Nvector::operator~() const {
+    return _size;
 }
 
-int &Nvector::operator[](int index){
-    return _values[index];
+std::ostream &operator<<(std::ostream &out, const Nvector &vector) {
+    out << ~vector << std::endl;
+    for (int i = 0; i < ~vector; ++i) {
+        out << vector[i] << std::endl;
+    }
+
+    return out;
+}
+
+std::istream &operator>>(std::istream &in, Nvector &vector) {
+    in >> vector._size;
+    for (int i = 0; i < ~vector; ++i) {
+        in >> vector[i];
+    }
+
+    return in;
 }
