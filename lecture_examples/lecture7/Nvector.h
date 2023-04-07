@@ -34,6 +34,7 @@ public:
     friend int operator%(const Nvector &lhs, const Nvector &rhs);
 
     friend bool operator|=(const Nvector &lhs, const Nvector &rhs);
+    friend bool operator||(const Nvector &lhs, const Nvector &rhs);
 
     friend std::ostream &operator<<(std::ostream &out, const Nvector &vector);
     friend std::istream &operator>>(std::istream &in, Nvector &vector);

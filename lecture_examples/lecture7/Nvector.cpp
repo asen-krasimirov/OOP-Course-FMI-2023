@@ -72,10 +72,17 @@ bool operator|=(const Nvector &lhs, const Nvector &rhs) {
     return (lhs % rhs) == 0;
 }
 
-// TODO: add are parallel check
-//bool Nvector::operator||(const Nvector &rhs) {
-//    return (*this % rhs) == 0;
-//}
+bool operator||(const Nvector &lhs, const Nvector &rhs) {
+    if (~lhs != ~rhs)
+        return false;
+
+    for (int i = 0; i < ~lhs - 1; i++)
+    {
+        if (lhs[i] * rhs[i + 1] != lhs[i + 1] * rhs[i])
+            return false;
+    }
+    return true;
+}
 
 Nvector operator+(const Nvector &lhs, const Nvector &rhs) {
     if (lhs._size != rhs._size) {
