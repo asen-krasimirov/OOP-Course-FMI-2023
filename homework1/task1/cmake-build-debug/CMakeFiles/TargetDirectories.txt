@@ -1,3 +1,0 @@
-C:/c++ files clion/oop/homework1/cmake-build-debug/CMakeFiles/homework1.dir
-C:/c++ files clion/oop/homework1/cmake-build-debug/CMakeFiles/edit_cache.dir
-C:/c++ files clion/oop/homework1/cmake-build-debug/CMakeFiles/rebuild_cache.dir
