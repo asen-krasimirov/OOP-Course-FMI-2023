@@ -23,8 +23,6 @@ public:
     Nvector &operator*=(int scalar);
 //    Nvector &operator%=(const Nvector &rhs);
 
-//    bool operator|=(const Nvector &rhs);
-//    bool operator||(const Nvector &rhs);
 
     unsigned operator~() const;
 //    unsigned &operator~();
