@@ -1,0 +1,5 @@
+|         Syn | Description |
+|        ---: |    :--:     |
+|      Header |    Title    |
+|   Paragraph |    Text     |
+|       Hello |    World    |

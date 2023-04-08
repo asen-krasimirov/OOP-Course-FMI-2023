@@ -1,0 +1,5 @@
+|      Syntax | Description |
+|        ---: |    :--:     |
+|      Boceto |    Title    |
+|   Paragraph |    Text     |
+|       Hello |    World    |
