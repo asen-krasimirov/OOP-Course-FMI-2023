@@ -17,6 +17,12 @@ void Name::free() {
     _size = 0;
 }
 
+Name::Name() {
+    _value = new char[1];
+    _value[0] = '\0';
+    _size = 0;
+}
+
 Name::Name(const Name &other) {
     copyFrom(other);
 }

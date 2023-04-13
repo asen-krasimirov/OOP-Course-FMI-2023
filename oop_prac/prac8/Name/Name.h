@@ -10,7 +10,7 @@ private:
     void free();
 
 public:
-    Name() = default;
+    Name();
     Name(const Name &other);
     Name &operator=(const Name &other);
     ~Name();
