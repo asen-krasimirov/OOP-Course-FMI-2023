@@ -50,5 +50,5 @@ void Name::setName(const char *value) {
     }
     
     delete[] _value;
-    copyName(_value, strlen(value));
+    copyName(value, strlen(value));
 }

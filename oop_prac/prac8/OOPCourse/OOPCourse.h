@@ -1,6 +1,7 @@
 #pragma once
 #include "../Name/Name.h"
 #include "../Student/Student.h"
+#include "../Grade/Grade.h"
 
 class OOPcourse {
 private:
@@ -9,13 +10,23 @@ private:
     unsigned _assistantCount;
 
     Student **_students;
-    unsigned count;
-    unsigned capacity;
+    unsigned _studentsCount;
+    unsigned _studentsCapacity;
 
+    Grade **_grades;
+    unsigned _gradesCount;
+    unsigned _gradesCapacity;
+
+    void copyStudents(Student ** const students, unsigned studentsCount, unsigned studentsCapacity);
+    void copyGrades(Grade ** const grades, unsigned gradesCount, unsigned gradesCapacity);
     void copyFrom(const OOPcourse &other);
+
+    void freeStudents();
+    void freeGrades();
     void free();
 
-    void resize();
+    void resizeStudents();
+    void resizeGrades();
 
 public:
     OOPcourse();
@@ -29,5 +40,25 @@ public:
     OOPcourse &operator=(const OOPcourse &other);
     ~OOPcourse();
 
+    void addStudent(const char *studentName, unsigned studentFac);
+    void addGrade(unsigned studentFac, const char *assignmentName, unsigned grade, const char *teacherName);
+
+    double getAverageForCourse() const;
+
+    void removeStudent(unsigned studentFac);
+
+    double getAverageGradePerTask(const char *assignmentName) const;
+    double getAverageFromTeacher(const char *assignmentName) const;
+
+
+private:
+    unsigned getStudentIndexByFac(unsigned studentFac);
+
+    void removeStudentAtIndex(unsigned index);
+    void removeGradeAtIndex(unsigned index);
+
+    void removeGradesByStudentFac(unsigned studentFac);
+
+    double getAverageByCriteria(bool (*compFunc)(const Grade &grade, const char *name), const char *name) const;
 
 };

@@ -18,4 +18,11 @@ public:
     Grade &operator=(const Grade &other);
     ~Grade();
 
+    Grade(const char *assignmentName, const char *teacherName, unsigned studentFac, unsigned value);
+
+    unsigned getValue() const;
+    unsigned getStudentFac() const;
+    const char *getAssignmentName() const;
+    const char *getTeacherName() const;
+
 };

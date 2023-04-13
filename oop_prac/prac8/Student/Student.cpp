@@ -1,16 +1,17 @@
 //#include <cstring>
 #include "Student.h"
 
-void Student::copyGrades(const unsigned *grades, unsigned gradesCount) {
-    _gradesCount = gradesCount;
-    for (int i = 0; i < _gradesCount; ++i) {
-        _grades[i] = grades[i];
-    }
-}
+//void Student::copyGrades(const unsigned *grades, unsigned gradesCount) {
+//    _gradesCount = gradesCount;
+//    for (int i = 0; i < _gradesCount; ++i) {
+//        _grades[i] = grades[i];
+//    }
+//}
 
 void Student::copyFrom(const Student &other) {
     _name.setName(other._name.getName());
-    copyGrades(other._grades, other._gradesCount);
+//    copyGrades(other._grades, other._gradesCount);
+    _gradesCount = other._gradesCount;
     _fac = other._fac;
 }
 
@@ -36,14 +37,6 @@ Student::~Student() {
     free();
 }
 
-void Student::setName(const char *name) {
-    if (name == nullptr) {
-        // throw/handle
-    }
-
-    _name.setName(name);
-}
-
 Student::Student(const char *name, unsigned int fac) {
     if (name == nullptr) {
         throw "Invalid name value!";
@@ -54,3 +47,22 @@ Student::Student(const char *name, unsigned int fac) {
     _fac = fac;
 }
 
+void Student::setName(const char *name) {
+    if (name == nullptr) {
+        // throw/handle
+    }
+
+    _name.setName(name);
+}
+
+void Student::addGrade() {
+    if (_gradesCount >= MAX_GRADE_COUNT) {
+        throw "Max grades count reached!";
+    }
+
+    _gradesCount++;
+}
+
+unsigned Student::getFac() const {
+    return _fac;
+}
