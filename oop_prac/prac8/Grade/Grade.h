@@ -1,16 +1,13 @@
+#pragma once
+#include "../Name/Name.h"
 
 class Grade {
 private:
-    char *_assignmentName;
-    char *_teacherName;
-    unsigned _assignmentNameCount;
-    unsigned _teacherNameCount;
+    Name _assignmentName;
+    Name _teacherName;
+
     unsigned _studentFac;
     unsigned _value;
-
-    void copyName(char *_name, unsigned &_size, const char *name, unsigned size);
-    void copyAssignmentName(const char *name, unsigned size);
-    void copyTeacherName(const char *name, unsigned size);
 
     void copyFrom(const Grade &other);
     void free();

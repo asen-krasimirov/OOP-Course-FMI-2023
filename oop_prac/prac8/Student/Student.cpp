@@ -1,11 +1,5 @@
-#include <cstring>
+//#include <cstring>
 #include "Student.h"
-
-void Student::copyName(const char *name, unsigned size) {
-    _nameSize = size;
-    _name = new char[_nameSize + 1];
-    strcpy(_name, name);
-}
 
 void Student::copyGrades(const unsigned *grades, unsigned gradesCount) {
     _gradesCount = gradesCount;
@@ -15,15 +9,12 @@ void Student::copyGrades(const unsigned *grades, unsigned gradesCount) {
 }
 
 void Student::copyFrom(const Student &other) {
-    copyName(other._name, other._nameSize);
+    _name.setName(other._name.getName());
     copyGrades(other._grades, other._gradesCount);
     _fac = other._fac;
 }
 
 void Student::free() {
-    delete[] _name;
-    _name = nullptr;
-    _nameSize = 0;
     _gradesCount = 0;
     _fac = 0;
 }
@@ -50,18 +41,15 @@ void Student::setName(const char *name) {
         // throw/handle
     }
 
-    if (_name != nullptr) {
-        delete[] _name;
-    }
-    copyName(name, strlen(name));
+    _name.setName(name);
 }
 
 Student::Student(const char *name, unsigned int fac) {
     if (name == nullptr) {
-        throw "Name should be a valid value!";
+        throw "Invalid name value!";
     }
 
-    copyName(name, strlen(name));
+    _name.setName(name);
     _gradesCount = 0;
     _fac = fac;
 }
