@@ -19,13 +19,15 @@ public:
     StringPool &operator=(const StringPool &other);
     ~StringPool();
 
+    bool operator[](const char *string) const;
+    bool operator[](const MyString &string) const;
+
     StringPool &operator*=(const char *string);
     StringPool &operator/=(const char *string);
 
-
     friend std::ostream &operator<<(std::ostream &out, const StringPool &stringPool);
 
-    int getStringIndex(const char *string) const;
 private:
+    int getStringIndex(const char *string) const;
 
 };

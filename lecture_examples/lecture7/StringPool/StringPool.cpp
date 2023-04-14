@@ -116,3 +116,12 @@ int StringPool::getStringIndex(const char *string) const {
         return -1;
     }
 }
+
+bool StringPool::operator[](const char *string) const {
+    return getStringIndex(string) != -1;
+}
+
+bool StringPool::operator[](const MyString &string) const {
+    return getStringIndex(string.getData()) != -1;
+}
+
