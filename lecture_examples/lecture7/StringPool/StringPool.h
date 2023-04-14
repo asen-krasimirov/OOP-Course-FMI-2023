@@ -4,15 +4,13 @@
 
 class StringPool {
 private:
-    MyString *_strings;
+    MyString **_strings;
     unsigned _size;
     unsigned _capacity;
 
     void copyFrom(const StringPool &other);
-    void clearPool();
     void free();
 
-    bool isStringIn(const char *string) const;
     void resize();
 
 public:
@@ -24,5 +22,10 @@ public:
     StringPool &operator*=(const char *string);
     StringPool &operator/=(const char *string);
 
+
     friend std::ostream &operator<<(std::ostream &out, const StringPool &stringPool);
+
+    int getStringIndex(const char *string) const;
+private:
+
 };
