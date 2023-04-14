@@ -70,6 +70,8 @@ void StringPool::resize() {
 }
 
 StringPool &StringPool::operator*=(const char *string) {
+    sortStrings();
+
     if (getStringIndex(string) != -1) {
 //        throw "String already in pool!";
         return *this;
@@ -84,6 +86,8 @@ StringPool &StringPool::operator*=(const char *string) {
 }
 
 StringPool &StringPool::operator/=(const char *string) {
+//    sortStrings();
+
     int index = getStringIndex(string);
     if (index == -1) {
 //        throw "String already in pool!";
@@ -195,7 +199,7 @@ StringPool operator-(const StringPool &lhs, const StringPool &rhs) {
 }
 
 void StringPool::sortStrings() {
-    for (int i = 0; i < _size - 1; ++i) {
+    for (int i = 0; i < _size; ++i) {
         int minIndex = i;
         for (int y = i; y < _size; ++y) {
             if (strcmp(_strings[minIndex]->getData(), _strings[y]->getData()) > 0) {
