@@ -70,7 +70,7 @@ void StringPool::resize() {
 }
 
 StringPool &StringPool::operator*=(const char *string) {
-    sortStrings();
+//    sortStrings();
 
     if (getStringIndex(string) != -1) {
 //        throw "String already in pool!";
@@ -166,6 +166,8 @@ bool StringPool::operator[](const MyString &string) const {
 }
 
 StringPool &StringPool::operator+=(const StringPool &rhs) {
+    sortStrings();
+
     for (int i = 0; i < rhs._size; ++i) {
         if (!(*this)[rhs._strings[i]->getData()]) {
             (*this) *= rhs._strings[i]->getData();
