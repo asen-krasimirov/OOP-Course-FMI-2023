@@ -88,3 +88,7 @@ std::ostream &operator<<(std::ostream &out, const MyString &string) {
 std::istream &operator>>(std::istream &in, const MyString &rhs) {
     return in >> rhs._data;
 }
+
+const char *MyString::getData() const {
+    return _data;
+}

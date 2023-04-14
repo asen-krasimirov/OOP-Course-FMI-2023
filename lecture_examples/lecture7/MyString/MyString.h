@@ -19,6 +19,8 @@ public:
 
     MyString(const char *data);
 
+    const char *getData() const;    // should be c_str as standard
+
     size_t length() const;
 
     char operator[](size_t index) const;
