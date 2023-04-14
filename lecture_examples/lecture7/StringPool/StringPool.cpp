@@ -146,3 +146,35 @@ bool StringPool::operator[](const MyString &string) const {
     return getStringIndex(string.getData()) != -1;
 }
 
+StringPool &StringPool::operator+=(const StringPool &rhs) {
+    for (int i = 0; i < rhs._size; ++i) {
+        if (!(*this)[rhs._strings[i]->getData()]) {
+            (*this) *= rhs._strings[i]->getData();
+        }
+    }
+
+    return *this;
+}
+
+StringPool operator+(const StringPool &lhs, const StringPool &rhs) {
+    StringPool result(lhs);
+    result += rhs;
+    return result;
+}
+
+
+StringPool &StringPool::operator-=(const StringPool &rhs) {
+    for (int i = 0; i < rhs._size; ++i) {
+        if ((*this)[rhs._strings[i]->getData()]) {
+            (*this) /= rhs._strings[i]->getData();
+        }
+    }
+
+    return *this;
+}
+
+StringPool operator-(const StringPool &lhs, const StringPool &rhs) {
+    StringPool result(lhs);
+    result -= rhs;
+    return result;
+}
