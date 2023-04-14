@@ -5,6 +5,18 @@
 const short INITIAL_CAPACITY = 5;
 const unsigned MAX_BUFFER = 1024;
 
+namespace {
+//    int compareStrings(const MyString &str1, const MyString &str2) {
+//        return strcmp(str1.getData(), str2.getData());
+//    }
+
+    void swap(MyString &pool1, MyString &pool2) {
+        MyString temp = pool1;
+        pool1 = pool2;
+        pool2 = temp;
+    }
+}
+
 void StringPool::copyFrom(const StringPool &other) {
     _size = other._size;
     _capacity = other._capacity;
@@ -85,7 +97,9 @@ StringPool &StringPool::operator/=(const char *string) {
     return *this;
 }
 
-std::ostream &operator<<(std::ostream &out, const StringPool &stringPool) {
+std::ostream &operator<<(std::ostream &out, StringPool &stringPool) {
+    stringPool.sortStrings();
+
     for (int i = 0; i < stringPool._size; ++i)
         out << stringPool._strings[i]->getData() << " ";
 
@@ -112,6 +126,7 @@ std::istream &operator>>(std::istream &in, StringPool &stringPool) {
 }
 
 int StringPool::getStringIndex(const char *string) const {
+    // TODO: better Binary Search should be made
     int lo = 0, hi = _size - 1;
     int mid;
 
@@ -177,4 +192,19 @@ StringPool operator-(const StringPool &lhs, const StringPool &rhs) {
     StringPool result(lhs);
     result -= rhs;
     return result;
+}
+
+void StringPool::sortStrings() {
+    for (int i = 0; i < _size - 1; ++i) {
+        int minIndex = i;
+        for (int y = i; y < _size; ++y) {
+            if (strcmp(_strings[minIndex]->getData(), _strings[y]->getData()) > 0) {
+                minIndex = y;
+            }
+        }
+
+        if (minIndex != i) {
+            swap(*_strings[minIndex], *_strings[i]);
+        }
+    }
 }

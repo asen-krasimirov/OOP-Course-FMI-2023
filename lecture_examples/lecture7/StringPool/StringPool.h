@@ -28,11 +28,12 @@ public:
     StringPool &operator+=(const StringPool &rhs);
     StringPool &operator-=(const StringPool &rhs);
 
-    friend std::ostream &operator<<(std::ostream &out, const StringPool &stringPool);
+    friend std::ostream &operator<<(std::ostream &out, StringPool &stringPool);
     friend std::istream &operator>>(std::istream &in, StringPool &stringPool);
 
 private:
     int getStringIndex(const char *string) const;
+    void sortStrings();
 
 };
 
