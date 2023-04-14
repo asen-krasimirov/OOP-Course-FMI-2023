@@ -1,17 +1,19 @@
 #pragma once
 #include <iostream>
+#include "../MyString/MyString.h"
 
 class StringPool {
 private:
-    char **_strings;
+    MyString *_strings;
     unsigned _size;
+    unsigned _capacity;
 
     void copyFrom(const StringPool &other);
     void clearPool();
     void free();
 
     bool isStringIn(const char *string) const;
-    void resize(unsigned size);
+    void resize();
 
 public:
     StringPool();
