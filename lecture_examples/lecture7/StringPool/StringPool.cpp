@@ -1,7 +1,9 @@
 #include <cstring>
+#include <sstream>
 #include "StringPool.h"
 
 const short INITIAL_CAPACITY = 5;
+const unsigned MAX_BUFFER = 1024;
 
 void StringPool::copyFrom(const StringPool &other) {
     _size = other._size;
@@ -85,9 +87,28 @@ StringPool &StringPool::operator/=(const char *string) {
 
 std::ostream &operator<<(std::ostream &out, const StringPool &stringPool) {
     for (int i = 0; i < stringPool._size; ++i)
-        out << stringPool._strings[i] << " ";
+        out << stringPool._strings[i]->getData() << " ";
 
     return out;
+}
+
+std::istream &operator>>(std::istream &in, StringPool &stringPool) {
+    char buffer[MAX_BUFFER]{};
+    in.getline(buffer, MAX_BUFFER, '\n');
+    std::stringstream line(buffer);
+
+
+    while (!line.eof()) {
+        char string[MAX_BUFFER];
+        line.getline(string, MAX_BUFFER, ' ');
+
+        stringPool *= string;
+    }
+
+    in.clear();
+    in.seekg(0, std::ios::beg);
+
+    return in;
 }
 
 int StringPool::getStringIndex(const char *string) const {

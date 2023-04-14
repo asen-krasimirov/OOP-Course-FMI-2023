@@ -26,6 +26,7 @@ public:
     StringPool &operator/=(const char *string);
 
     friend std::ostream &operator<<(std::ostream &out, const StringPool &stringPool);
+    friend std::istream &operator>>(std::istream &in, StringPool &stringPool);
 
 private:
     int getStringIndex(const char *string) const;
