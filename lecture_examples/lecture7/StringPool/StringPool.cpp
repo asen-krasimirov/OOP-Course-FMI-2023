@@ -6,10 +6,6 @@ const short INITIAL_CAPACITY = 5;
 const unsigned MAX_BUFFER = 1024;
 
 namespace {
-//    int compareStrings(const MyString &str1, const MyString &str2) {
-//        return strcmp(str1.getData(), str2.getData());
-//    }
-
     void swap(MyString &pool1, MyString &pool2) {
         MyString temp = pool1;
         pool1 = pool2;
@@ -70,8 +66,6 @@ void StringPool::resize() {
 }
 
 StringPool &StringPool::operator*=(const char *string) {
-//    sortStrings();
-
     if (getStringIndex(string) != -1) {
 //        throw "String already in pool!";
         return *this;
