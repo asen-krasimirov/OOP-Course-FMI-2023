@@ -61,4 +61,6 @@ private:
 
     double getAverageByCriteria(bool (*compFunc)(const Grade &grade, const char *name), const char *name) const;
 
+    bool doesStudentHasGradeOnAssignment(unsigned studentFac, const char *assignmentName);
+
 };

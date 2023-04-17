@@ -148,6 +148,10 @@ void OOPcourse::addGrade(unsigned studentFac, const char *assignmentName, unsign
     try {
         Student &student = *_students[getStudentIndexByFac(studentFac)];
         student.addGrade();
+
+        if (doesStudentHasGradeOnAssignment(studentFac, assignmentName)) {
+            throw "Student is already grades!";
+        }
     }
     catch (const char *msg) {
         // handle?
@@ -233,4 +237,22 @@ double OOPcourse::getAverageGradePerTask(const char *assignmentName) const {
 
 double OOPcourse::getAverageFromTeacher(const char *teacherName) const {
     return getAverageByCriteria(areTeacherMatching, teacherName);
+}
+
+bool OOPcourse::doesStudentHasGradeOnAssignment(unsigned studentFac, const char *assignmentName) {
+    for (int i = 0; i < _gradesCount; ++i) {
+        Grade &curGrade = *_grades[i];
+
+        if (curGrade.getStudentFac() != studentFac) {
+            continue;
+        }
+
+        if (strcmp(curGrade.getAssignmentName(), assignmentName) != 0) {
+            continue;
+        }
+
+        return true;
+    }
+
+    return false;
 }
