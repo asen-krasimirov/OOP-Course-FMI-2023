@@ -16,9 +16,6 @@ void MyString::free() {
 }
 
 MyString::MyString() : MyString(1) {
-//    _data = new char[1];
-//    _data[0] = '\0';
-//    _length = 0;
     _data[0] = '\0';
 }
 
@@ -40,15 +37,12 @@ MyString::~MyString() {
 }
 
 MyString::MyString(const char *data) : MyString(strlen(data) + 1) {
-//    _length = strlen(data);
-//    _data = new char[_length + 1];
     strcpy(_data, data);
 }
 
 MyString::MyString(size_t capacity) {
     _length = capacity - 1;
     _data = new char[capacity];
-//    _data[0] = '\0';
 }
 
 size_t MyString::length() const {
@@ -79,14 +73,6 @@ MyString &MyString::operator+=(const MyString &other) {
 }
 
 MyString operator+(const MyString &lhs, const MyString &rhs) {
-//    MyString result(lhs.length() + rhs.length() + 1);
-//    result[0] = '\0';
-
-//    strcat(result._data, lhs._data);
-//    strcat(result._data, rhs._data);
-
-//    return result;
-
     MyString result(lhs);
     result += rhs;
     return result;
@@ -125,12 +111,3 @@ std::istream &operator>>(std::istream &in, MyString &str) {
 
     return in;
 }
-
-
-//std::istream &operator>>(std::istream &in, const MyString &rhs) {
-//    return in >> rhs._data;
-//}
-
-//const char *MyString::getData() const {
-//    return _data;
-//}
