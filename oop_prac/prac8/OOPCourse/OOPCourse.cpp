@@ -149,8 +149,8 @@ void OOPcourse::addGrade(unsigned studentFac, const char *assignmentName, unsign
         Student &student = *_students[getStudentIndexByFac(studentFac)];
         student.addGrade();
 
-        if (doesStudentHasGradeOnAssignment(studentFac, assignmentName)) {
-            throw "Student is already grades!";
+        if (doesStudentHasGradeOnAssignment(studentFac, assignmentName, teacherName)) {
+            throw "Student is already graded! on this assignment";
         }
     }
     catch (const char *msg) {
@@ -239,7 +239,18 @@ double OOPcourse::getAverageFromTeacher(const char *teacherName) const {
     return getAverageByCriteria(areTeacherMatching, teacherName);
 }
 
-bool OOPcourse::doesStudentHasGradeOnAssignment(unsigned studentFac, const char *assignmentName) {
+bool OOPcourse::doesStudentHasGradeOnAssignment(unsigned studentFac, const char *assignmentName, const char *teacherName) {
+    try {
+        getGrade(studentFac, assignmentName, teacherName);
+    }
+    catch(const char *msg) {
+        return false;
+    }
+
+    return true;
+}
+
+Grade &OOPcourse::getGrade(unsigned studentFac, const char *assignmentName, const char *teacherName) {
     for (int i = 0; i < _gradesCount; ++i) {
         Grade &curGrade = *_grades[i];
 
@@ -251,8 +262,24 @@ bool OOPcourse::doesStudentHasGradeOnAssignment(unsigned studentFac, const char 
             continue;
         }
 
-        return true;
+        if (strcmp(curGrade.getTeacherName(), teacherName) != 0) {
+            continue;
+        }
+
+        return curGrade;
     }
 
-    return false;
+    throw "Grade not found!";
+}
+
+void OOPcourse::changeGrade(unsigned studentFac, const char *assignmentName, unsigned grade, const char *teacherName) {
+    try {
+        Grade &curGrade = getGrade(studentFac, assignmentName, teacherName);
+        curGrade.setValue(grade);
+    }
+    catch (const char *msg) {
+        // handle
+
+        throw;
+    }
 }

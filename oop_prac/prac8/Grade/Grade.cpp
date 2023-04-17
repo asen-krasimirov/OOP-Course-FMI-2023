@@ -22,3 +22,11 @@ const char *Grade::getAssignmentName() const {
 const char *Grade::getTeacherName() const {
     return _teacherName.getName();
 }
+
+void Grade::setValue(unsigned value) {
+    if (value < 2 || value > 6) {
+        throw "Value should be between 2 and 6!";
+    }
+
+    _value = value;
+}

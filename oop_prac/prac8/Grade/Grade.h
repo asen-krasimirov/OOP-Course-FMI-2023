@@ -17,4 +17,5 @@ public:
     const char *getAssignmentName() const;
     const char *getTeacherName() const;
 
+    void setValue(unsigned value);
 };
