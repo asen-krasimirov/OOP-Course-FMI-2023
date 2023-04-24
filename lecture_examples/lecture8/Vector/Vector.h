@@ -7,16 +7,18 @@ class Test {
 class Vector {
 private:
     Test *_data = nullptr;
-    size_t _size;
     size_t _capacity;
+    size_t _size;
 
     void copyFrom(const Vector &other);
     void free();
 
     void resize(size_t newCapacity);
 
-//    void upsizeIfNeeded();
-//    void downsizeIfNeeded();
+    void assertIndex(size_t index) const;
+    void assertEmptyVector() const;
+    void upsizeIfNeeded();
+    void downsizeIfNeeded();
 
 public:
     Vector();
@@ -36,4 +38,6 @@ public:
     void clear();
     void shrinkToFit();
 
+    const Test &operator[](size_t index) const;
+    Test &operator[](size_t index);
 };
