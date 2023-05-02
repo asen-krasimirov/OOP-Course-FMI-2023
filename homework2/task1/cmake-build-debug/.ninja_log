@@ -1,0 +1,9 @@
+# ninja log v5
+6	729	7044667819241214	CMakeFiles/task1.dir/main.cpp.obj	35bf39b446f54711
+6	746	7044666585427491	CMakeFiles/task1.dir/MyString/MyString.cpp.obj	5d81768fe603e477
+762	941	7044744684221429	task1.exe	cb80e4d8247b61a3
+9	761	7044744682505158	CMakeFiles/task1.dir/MyStringSSO/MyStringSSO.cpp.obj	191c5ac1797c48b6
+5	704	7044743383228957	CMakeFiles/task1.dir/main1.cpp.obj	5df9936e5a2716ff
+10	761	7044765390159338	CMakeFiles/task1.dir/main.cpp.obj	35bf39b446f54711
+1	775	7044765390184352	CMakeFiles/task1.dir/MyString/MyString.cpp.obj	5d81768fe603e477
+775	963	7044765392128898	task1.exe	c280062d014769f1
