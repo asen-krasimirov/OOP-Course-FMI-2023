@@ -1,14 +1,16 @@
 #include <iostream>
-#include "../MyString/MyString.h"
+//#include "../MyString/MyString.h"
+#include "../StringVector/StringVector.h"
 
 class Order {
 private:
     MyString _restaurantName;
-    MyString *_products;
-    size_t _productsCount;
+//    MyString *_products;
+//    size_t _productsCount;
+    StringVector _products;
 
-    void move(Order &&other);
     void copyFrom(const Order &other);
+    void moveFrom(Order &&other);
     void free();
 
 public:

@@ -1,26 +1,27 @@
 #include <cstring>
 #include "Order.h"
 
-void Order::move(Order &&other) {
+void Order::copyFrom(const Order &other) {
+    _restaurantName = other._restaurantName;
+//    _productsCount = other._productsCount;
+//    for (int i = 0; i < _productsCount; ++i) {
+//        _products[i] = other._products[i];
+//    }
+    _products = other._products;
+}
+
+void Order::moveFrom(Order &&other) {
     _restaurantName = std::move(other._restaurantName);
-    _productsCount = other._productsCount;
+//    _productsCount = other._productsCount;
 //    for (int i = 0; i < _productsCount; ++i) {
 //        _products[i] = std::move(other._products[i]);
 //    }
 
-    _products = other._products;
+    _products = std::move(other._products);
 
-    other._products = nullptr;
+//    other._products = nullptr;
 //    delete[] other._products;
 //    other._productsCount = 0;
-}
-
-void Order::copyFrom(const Order &other) {
-    _restaurantName = other._restaurantName;
-    _productsCount = other._productsCount;
-    for (int i = 0; i < _productsCount; ++i) {
-        _products[i] = other._products[i];
-    }
 }
 
 void Order::free() {
