@@ -13,3 +13,8 @@ size_t Engine::getHorsePower() const {
     return _horsePower;
 }
 
+std::ostream &operator<<(std::ostream &out, const Engine &engine) {
+//    CarPart::operator<<(out, engine);
+    engine.printPartInfo(out);
+    return out << engine._horsePower << " hp";
+}
