@@ -27,3 +27,7 @@ void CarPart::setManufacturerName(const MyString &manufacturerName) {
 void CarPart::setDescription(const MyString &description) {
     _description = description;
 }
+
+std::ostream &operator<<(std::ostream &out, const CarPart &carPart) {
+    return out << "(" << carPart._id << ")" << " by " << carPart._manufacturerName << " - " << carPart._description << " - ";
+}

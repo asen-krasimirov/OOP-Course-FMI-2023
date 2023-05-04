@@ -20,4 +20,7 @@ public:
 //    void setId();
     void setManufacturerName(const MyString &manufacturerName);
     void setDescription(const MyString &description);
+
+    friend std::ostream &operator<<(std::ostream &out, const CarPart &carPart);
+
 };
