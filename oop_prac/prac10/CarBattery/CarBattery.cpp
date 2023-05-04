@@ -13,3 +13,8 @@ CarBattery::CarBattery(const MyString &manufacturerName, const MyString &descrip
     setCapacity(capacity);
     setBatteryId(batteryId);
 }
+
+std::ostream &operator<<(std::ostream &out, const CarBattery &carBattery) {
+    carBattery.printPartInfo(out);
+    return out << carBattery._capacity << " Ah";
+}

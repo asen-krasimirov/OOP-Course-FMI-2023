@@ -1,3 +1,4 @@
+#pragma once
 #include "../CarPart/CarPart.h"
 
 class Tyre : CarPart {
@@ -18,5 +19,7 @@ public:
     size_t getWidth() const;
     size_t getProfile() const;
     size_t getDiameter() const;
+
+    friend std::ostream &operator<<(std::ostream &out, const Tyre &tyre);
 
 };

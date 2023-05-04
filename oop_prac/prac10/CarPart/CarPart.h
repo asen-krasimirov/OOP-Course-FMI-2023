@@ -1,3 +1,5 @@
+#pragma once
+
 #include <iostream>
 #include "../MyString/MyString.h"
 
@@ -21,6 +23,9 @@ public:
     void setManufacturerName(const MyString &manufacturerName);
     void setDescription(const MyString &description);
 
+//    static std::ostream &operator<<(std::ostream &out);
+
+    void printPartInfo(std::ostream &out) const;
     friend std::ostream &operator<<(std::ostream &out, const CarPart &carPart);
 
 };

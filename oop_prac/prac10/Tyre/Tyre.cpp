@@ -22,7 +22,7 @@ void Tyre::setWidth(size_t width) {
 
 void Tyre::setProfile(size_t profile) {
     if (profile < MIN_PROFILE || profile > MAX_PROFILE) {
-        throw std::invalid_argument("Profile should be between 155 and 365!");
+        throw std::invalid_argument("Profile should be between 30 and 80!");
     }
 
     _profile = profile;
@@ -30,7 +30,7 @@ void Tyre::setProfile(size_t profile) {
 
 void Tyre::setDiameter(size_t diameter) {
     if (diameter < MIN_DIAMETER || diameter > MAX_DIAMETER) {
-        throw std::invalid_argument("Diameter should be between 155 and 365!");
+        throw std::invalid_argument("Diameter should be between 13 and 21!");
     }
 
     _diameter = diameter;
@@ -53,4 +53,9 @@ size_t Tyre::getProfile() const {
 
 size_t Tyre::getDiameter() const {
     return _diameter;
+}
+
+std::ostream &operator<<(std::ostream &out, const Tyre &tyre) {
+    tyre.printPartInfo(out);
+    return out << tyre._width << "/" << tyre._profile << "R" << tyre._diameter;
 }

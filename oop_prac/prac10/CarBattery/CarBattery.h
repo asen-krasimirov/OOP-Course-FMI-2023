@@ -1,3 +1,4 @@
+#pragma once
 #include "../CarPart/CarPart.h"
 
 class CarBattery : CarPart {
@@ -14,5 +15,7 @@ public:
 
     double getCapacity() const;
     const MyString &getBatteryId() const;
+
+    friend std::ostream &operator<<(std::ostream &out, const CarBattery &carBattery);
 
 };

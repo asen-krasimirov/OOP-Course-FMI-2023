@@ -28,6 +28,17 @@ void CarPart::setDescription(const MyString &description) {
     _description = description;
 }
 
+void CarPart::printPartInfo(std::ostream &out) const {
+    out << "(" << _id << ")" << " by " << _manufacturerName << " - " << _description << " - ";
+}
+
+//std::ostream &CarPart::operator<<(std::ostream &out) {
+//    return out << this;
+//}
+
+
 std::ostream &operator<<(std::ostream &out, const CarPart &carPart) {
-    return out << "(" << carPart._id << ")" << " by " << carPart._manufacturerName << " - " << carPart._description << " - ";
+//    return out << "(" << carPart._id << ")" << " by " << carPart._manufacturerName << " - " << carPart._description << " - ";
+    carPart.printPartInfo(out);
+    return out;
 }
