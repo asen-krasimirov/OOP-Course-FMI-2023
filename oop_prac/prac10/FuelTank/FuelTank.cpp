@@ -1,5 +1,9 @@
 #include "FuelTank.h"
 
+FuelTank::FuelTank() : CarPart("FuelTank Def Manu", "FuelTank Def Desc") {
+    _capacity = _curFuel = 0;
+}
+
 FuelTank::FuelTank(const MyString &manufacturer, const MyString &description, double capacity) : CarPart(manufacturer, description) {
     _capacity = _curFuel = capacity;
 }

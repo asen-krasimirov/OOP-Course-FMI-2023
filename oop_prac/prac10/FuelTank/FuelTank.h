@@ -9,6 +9,7 @@ private:
     double _capacity;
 
 public:
+    FuelTank();
     FuelTank(const MyString &manufacturer, const MyString &description, double capacity);
 
     void use(double toUse);
