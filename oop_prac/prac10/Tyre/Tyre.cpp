@@ -56,6 +56,7 @@ size_t Tyre::getDiameter() const {
 }
 
 std::ostream &operator<<(std::ostream &out, const Tyre &tyre) {
-    tyre.printPartInfo(out);
+//    tyre.printPartInfo(out);
+    out << (CarPart &) tyre;
     return out << tyre._width << "/" << tyre._profile << "R" << tyre._diameter;
 }

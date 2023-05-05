@@ -15,6 +15,6 @@ CarBattery::CarBattery(const MyString &manufacturerName, const MyString &descrip
 }
 
 std::ostream &operator<<(std::ostream &out, const CarBattery &carBattery) {
-    carBattery.printPartInfo(out);
+    out << (CarPart &) carBattery;
     return out << carBattery._capacity << " Ah";
 }
