@@ -36,6 +36,12 @@ void Tyre::setDiameter(size_t diameter) {
     _diameter = diameter;
 }
 
+Tyre::Tyre() : CarPart("Def Tyre Manu", "Def Tyre Desc") {
+    setWidth(MIN_WIDTH);
+    setProfile(MIN_PROFILE);
+    setDiameter(MIN_DIAMETER);
+}
+
 Tyre::Tyre(const MyString &manufacturerName, const MyString &description, size_t width, size_t profile, size_t diameter)
         : CarPart(manufacturerName, description) {
     setWidth(width);
