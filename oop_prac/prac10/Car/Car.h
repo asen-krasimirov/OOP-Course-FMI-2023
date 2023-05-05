@@ -25,4 +25,5 @@ public:
 
     void drive(double km);
 
+    friend Car *dragRace(Car *car1, Car *car2);
 };

@@ -21,7 +21,7 @@ void Car::drive(double km) {
         _fuelTank.use(km);
         _passedKilometers += km;
     }
-    catch(std::logic_error exc) {
+    catch(std::logic_error &exc) {
         std::cout << exc.what() << std::endl;
         throw;
     }
