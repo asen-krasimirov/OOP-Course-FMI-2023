@@ -1,13 +1,17 @@
 #pragma once
 #include <iostream>
 
-class FuelTank {
+#include "../CarPart/CarPart.h"
+
+class FuelTank : CarPart {
 private:
-    size_t _cur_fuel;
-    size_t _capacity;
+    double _curFuel;
+    double _capacity;
 
 public:
-    void use(size_t toUse);
-    void fill(size_t toFill);
+    FuelTank(const MyString &manufacturer, const MyString &description, double capacity);
+
+    void use(double toUse);
+    void fill(double toFill);
 
 };

@@ -12,7 +12,7 @@ private:
     void setDiameter(size_t diameter);
 
 public:
-    Tyre();
+    Tyre() = delete;
     Tyre(const MyString &manufacturerName, const MyString &description, size_t width, size_t profile, size_t diameter);
 
 public:

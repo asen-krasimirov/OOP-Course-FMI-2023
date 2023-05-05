@@ -1,17 +1,21 @@
 #include "FuelTank.h"
 
-void FuelTank::use(size_t toUse) {
-    if (_cur_fuel - toUse > _capacity) {
-        throw std::logic_error("Insufficient fuel error!");
-    }
-
-    _cur_fuel -= toUse;
+FuelTank::FuelTank(const MyString &manufacturer, const MyString &description, double capacity) : CarPart(manufacturer, description) {
+    _capacity = _curFuel = capacity;
 }
 
-void FuelTank::fill(size_t toFill) {
-    _cur_fuel += toFill;
+void FuelTank::use(double toUse) {
+    if (_curFuel - toUse > _capacity) {
+        throw std::logic_error("Not enough fuel!");
+    }
 
-    if (_cur_fuel > _capacity) {
-        _cur_fuel = _capacity;
+    _curFuel -= toUse;
+}
+
+void FuelTank::fill(double toFill) {
+    _curFuel += toFill;
+
+    if (_curFuel > _capacity) {
+        _curFuel = _capacity;
     }
 }
