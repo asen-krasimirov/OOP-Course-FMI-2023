@@ -151,7 +151,7 @@ Test Vector::popBack() {
     assertEmptyVector();
     downsizeIfNeeded();
 
-    return _data[_size--];
+    return _data[--_size];
 }
 
 Test Vector::popAt(size_t index) {
