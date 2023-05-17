@@ -20,7 +20,13 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9ffa897b-776f-460a-aa85-05db27a27445" name="Changes" comment="fixing TableParser name setting and error handling (exception handling needs improvement)" />
+    <list default="true" id="9ffa897b-776f-460a-aa85-05db27a27445" name="Changes" comment="fixing TableParser name setting and error handling (exception handling needs improvement)">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/cache-v2-d82a95ca0d72b9a89ff8.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/cmakeFiles-v1-c3b7655d74e47d2dcdeb.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/codemodel-v2-5873e982e76639f08178.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/index-2023-04-08T09-09-56-0287.json" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -55,20 +61,17 @@
     "WebServerToolWindowFactoryState": "false",
     "cf.first.check.clang-format": "false",
     "cidr.known.project.marker": "true",
-    "last_opened_file_path": "C:/c++ files clion/oop/lecture_examples/lecture7",
+    "last_opened_file_path": "C:/c++ files clion/Spreadsheets",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
-    "structure.view.defaults.are.configured": "true"
+    "nodejs_package_manager_path": "npm",
+    "structure.view.defaults.are.configured": "true",
+    "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
   <component name="RunManager">
-    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
-      <method v="2">
-        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="homework1" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="homework1" TARGET_NAME="homework1" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="homework1" RUN_TARGET_NAME="homework1">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
@@ -99,6 +102,13 @@
       <workItem from="1680720644083" duration="2210000" />
       <workItem from="1680944992499" duration="826000" />
       <workItem from="1681034451262" duration="272000" />
+      <workItem from="1683886215030" duration="1984000" />
+      <workItem from="1683889334432" duration="1490000" />
+      <workItem from="1684091666205" duration="29000" />
+      <workItem from="1684092402937" duration="1301000" />
+      <workItem from="1684174120395" duration="1627000" />
+      <workItem from="1684262466827" duration="629000" />
+      <workItem from="1684270516203" duration="1618000" />
     </task>
     <task id="LOCAL-00001" summary="variable name fix">
       <created>1680721035469</created>
@@ -126,6 +136,12 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VCPKGProject">
+    <isAutomaticEditVcpkgJson value="false" />
+    <isAutomaticCheckingOnLaunch value="false" />
+    <isAutomaticFoundErrors value="true" />
+    <isAutomaticFoundErrors value="true" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
