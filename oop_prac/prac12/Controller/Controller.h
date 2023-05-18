@@ -23,6 +23,7 @@ public:
     virtual ~Controller() = default;
 
     virtual void setDataDialog() = 0;
+    virtual Controller *clone() const = 0;
 
     void setSize(size_t width, size_t height);
 

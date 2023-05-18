@@ -15,3 +15,7 @@ void Label::setDataDialog() {
 
     setText(inputText);
 }
+
+Controller  *Label::clone() const {
+    return new Label(*this);
+}

@@ -12,5 +12,8 @@ private:
 public:
     RadioButton(size_t x, size_t y, const Vector<MyString> &options);
     void setDataDialog() override;
+    Controller *clone() const override;
+
+    void setOptionByIndex(unsigned index, const char *newOption);
 
 };

@@ -11,6 +11,8 @@ private:
 public:
     CheckBox(size_t x, size_t y, const char *text);
     void setDataDialog() override;
+    Controller *clone() const override;
+
     void setText(const char *text);
 
 };

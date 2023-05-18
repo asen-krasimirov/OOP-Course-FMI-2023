@@ -15,3 +15,7 @@ void CheckBox::setDataDialog() {
 
     _isOn = std::strcmp(inputText, "on") == 0;
 }
+
+Controller *CheckBox::clone() const {
+    return new CheckBox(*this);
+}

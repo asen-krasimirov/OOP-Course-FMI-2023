@@ -12,5 +12,6 @@ private:
 public:
     Label(size_t x, size_t y, const char *text);
     void setDataDialog() override;
+    Controller *clone() const override;
 
 };
