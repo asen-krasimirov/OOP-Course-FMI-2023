@@ -32,4 +32,7 @@ public:
 
     void useDataDialog(unsigned index);
 
+    const Controller &operator[](size_t index) const;
+    Controller &operator[](size_t index);
+
 };

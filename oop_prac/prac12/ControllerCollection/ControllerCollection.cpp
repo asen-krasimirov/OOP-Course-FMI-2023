@@ -94,3 +94,11 @@ void ControllerCollection::addRadioButton(const RadioButton *radioButton) {
 void ControllerCollection::useDataDialog(unsigned int index) {
     _controllers[index]->setDataDialog();
 }
+
+const Controller &ControllerCollection::operator[](size_t index) const {
+    return *_controllers[index];
+}
+
+Controller &ControllerCollection::operator[](size_t index) {
+    return *_controllers[index];
+}
