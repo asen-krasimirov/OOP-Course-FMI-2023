@@ -33,5 +33,6 @@ public:
     const Point &getCoordinates() const;
 
     void setSize(size_t width, size_t height);
+    void setCoordinates(size_t x, size_t y);
 
 };

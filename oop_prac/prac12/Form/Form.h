@@ -1,26 +1,25 @@
 #pragma once
 
-#include "../Vector/Vector.hpp"
-#include "../Controller/Controller.h"
+#include "../ControllerCollection/ControllerCollection.h"
 
 class Form {
 private:
-    Controller** _controllers;
-    size_t _size;
-    size_t _capacity;
+    ControllerCollection _controllerCollection;
+    Size _size;
 
-    void copyFrom(const Form &other);
-    void moveFrom(Form &&other);
-    void free();
-
-    void resize();
+    bool isInForm(size_t width, size_t height, size_t x, size_t y);
 
 public:
-    Form() = default;
-    Form(const Form &other);
-    Form(Form &&other);
-    Form &operator=(const Form &other);
-    Form &operator=(Form &&other);
-    ~Form();
+    Form(size_t width, size_t height);
+
+    void addLabel(size_t x, size_t y, const char *text);
+    void addCheckBox(size_t x, size_t y, const char *text);
+    void addRadioButton(size_t x, size_t y, const Vector<MyString> &options);
+
+    void setSize(size_t width, size_t height);
+    void setControllerSize(size_t index, size_t width, size_t height);
+    void setControllerCoordinates(size_t index, size_t x, size_t y);
+
+    void change(size_t index);
 
 };
