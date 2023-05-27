@@ -10,6 +10,7 @@ int main() {
     set2.addNumber(2);
     set2.addNumber(3);
     set2.addNumber(5);
+    set2.addNumber(- 5);
 
 //    set1.print();
 //    set1.printBits();
