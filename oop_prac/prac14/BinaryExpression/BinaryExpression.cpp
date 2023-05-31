@@ -1,14 +1,21 @@
 #include "BinaryExpression.h"
 
-namespace {
-    const char AND = '^';
-    const char OR = 'v';
-    const char IMP = '>';
-    const char EQV = '=';
-}
+//namespace {
+//    const char AND = '^';
+//    const char OR = 'v';
+//    const char IMP = '>';
+//    const char EQV = '=';
+//}
 
-BinaryExpression::BinaryExpression(char operand, BooleanExpression *left, BooleanExpression *right) : _operand(operand), _left(left), _right(right) {
-
+BinaryExpression::BinaryExpression(char operand, BooleanExpression *left, BooleanExpression *right)
+    : _operand(operand), _left(left), _right(right) {
+    _variablesCount = 0;
+    for (size_t i = 0; i < VARIABLES_COUNT; ++i) {
+        if (_left->_variables[i] || _right->_variables[i]) {
+            _variables[i] = true;
+            _variablesCount++;
+        }
+    }
 }
 
 BooleanExpression *BinaryExpression::clone() const {

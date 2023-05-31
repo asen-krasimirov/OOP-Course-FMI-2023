@@ -1,6 +1,6 @@
 #pragma once
 
-const short VARIABLES_COUNT = 26;
+#include "../constants.h"
 
 class BooleanInterpretation {
 private:
@@ -9,5 +9,7 @@ private:
 public:
     bool getVar(char ch) const;
     void setVar(char ch, bool newVal);
+
+    static bool isCharValid(char ch);
 
 };

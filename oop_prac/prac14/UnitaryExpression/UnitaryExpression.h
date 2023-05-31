@@ -2,7 +2,7 @@
 
 #include "../BooleanExpression/BooleanExpression.h"
 
-class UnitaryExpression : BooleanExpression {
+class UnitaryExpression : public BooleanExpression {
 private:
     char _operand;
     BooleanExpression *_expression;

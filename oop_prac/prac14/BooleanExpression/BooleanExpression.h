@@ -1,13 +1,15 @@
 #pragma once
 
+#include <iostream>
+
 #include "../BooleanInterpretation/BooleanInterpretation.h"
+#include "../constants.h"
 
 class BooleanExpression {
-private:
-    bool _variables[VARIABLES_COUNT];
-    unsigned _variablesCount;
-
 public:
+    bool _variables[VARIABLES_COUNT];
+    size_t _variablesCount;
+
     virtual BooleanExpression *clone() const = 0;
     virtual ~BooleanExpression() = default;
 

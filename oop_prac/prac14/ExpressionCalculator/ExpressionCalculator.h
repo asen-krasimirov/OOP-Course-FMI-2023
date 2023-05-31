@@ -11,9 +11,13 @@ class ExpressionCalculator {
 private:
     BooleanExpression *_expression;
 
-    static BooleanExpression *parseExpression(const StringView &stringView);
+    static BooleanExpression *parseExpression(const StringView &strView);
 
 public:
+    // Big6 (mandatory)
     ExpressionCalculator(const MyString &str);
+
+    bool isTautology() const;
+    bool isContradiction() const;
 
 };
