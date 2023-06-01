@@ -10,6 +10,47 @@ namespace {
     }
 }
 
+void ExpressionCalculator::copyFrom(const ExpressionCalculator &other) {
+    _expression = other._expression->clone();
+}
+
+void ExpressionCalculator::moveFrom(ExpressionCalculator &&other) {
+    _expression = other._expression;
+    other._expression = nullptr;
+}
+
+void ExpressionCalculator::free() {
+    delete _expression;
+}
+
+ExpressionCalculator::ExpressionCalculator(const ExpressionCalculator &other) {
+    copyFrom(other);
+}
+
+ExpressionCalculator::ExpressionCalculator(ExpressionCalculator &&other) {
+    moveFrom(std::move(other));
+}
+
+ExpressionCalculator &ExpressionCalculator::operator=(const ExpressionCalculator &other) {
+    if (this != &other) {
+        free();
+        copyFrom(other);
+    }
+    return *this;
+}
+
+ExpressionCalculator &ExpressionCalculator::operator=(ExpressionCalculator &&other) {
+    if (this != &other) {
+        free();
+        moveFrom(std::move(other));
+    }
+    return *this;
+}
+
+ExpressionCalculator::~ExpressionCalculator() {
+    free();
+}
+
 BooleanExpression *ExpressionCalculator::parseExpression(const StringView &strView) {
     if(strView.length() == 0)
         return nullptr;

@@ -6,7 +6,7 @@ Variable::Variable(char ch) : _ch(ch) {
 }
 
 BooleanExpression *Variable::clone() const {
-    return new Variable(*this);
+    return new Variable(_ch);
 }
 
 bool Variable::evaluate(const BooleanInterpretation &interpretation) const {
