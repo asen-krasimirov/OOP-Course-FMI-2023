@@ -13,6 +13,8 @@ private:
 
     static BooleanExpression *parseExpression(const StringView &strView);
 
+    bool checkAllVariations(bool expectedValue) const;
+
 public:
     // Big6 (mandatory)
     ExpressionCalculator(const MyString &str);

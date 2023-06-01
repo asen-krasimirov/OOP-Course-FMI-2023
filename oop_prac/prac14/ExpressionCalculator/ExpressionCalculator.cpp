@@ -2,7 +2,7 @@
 
 #include "../Variable/Variable.h"
 #include "../UnitaryExpression/UnitaryExpression.h"
-#include "../BinaryExpression/BinaryExpression.h";
+#include "../BinaryExpression/BinaryExpression.h"
 
 namespace {
     bool isCharBinaryOperand(char ch) {
@@ -18,7 +18,6 @@ BooleanExpression *ExpressionCalculator::parseExpression(const StringView &strVi
         return new Variable(strView[0]);
 
     StringView strWithoutBrackets = strView.substr(1, strView.length() - 2);
-    std::cout << strWithoutBrackets;
 
     size_t bracketsCount = 0;
     size_t strWithoutBracketsLength = strWithoutBrackets.length();
@@ -47,14 +46,20 @@ ExpressionCalculator::ExpressionCalculator(const MyString &str) {
     _expression = parseExpression(str);
 }
 
-bool ExpressionCalculator::isTautology() const {
+bool ExpressionCalculator::checkAllVariations(bool expectedValue) const {
     size_t variationsCount = 1 << _expression->_variablesCount;
-
     for (size_t i = 0; i < variationsCount; ++i) {
-//        if()
+        if (_expression->evaluate(BooleanInterpretation::createFromNumber(i, _expression->_variables)) != expectedValue) {
+            return false;
+        }
     }
+    return true;
+}
+
+bool ExpressionCalculator::isTautology() const {
+    return checkAllVariations(true);
 }
 
 bool ExpressionCalculator::isContradiction() const {
-    return true;
+    return checkAllVariations(false);
 }
