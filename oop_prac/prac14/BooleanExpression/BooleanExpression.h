@@ -8,7 +8,7 @@
 class BooleanExpression {
 public:
     bool _variables[VARIABLES_COUNT] = { false };
-    size_t _variablesCount;
+    size_t _variablesCount = 0;
 
     virtual BooleanExpression *clone() const = 0;
 
