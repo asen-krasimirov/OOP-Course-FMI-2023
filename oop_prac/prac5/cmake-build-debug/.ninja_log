@@ -1,0 +1,12 @@
+# ninja log v5
+250	319	7012023962903384	prac5.exe	27951fa564934b34
+2	243	7012010771980327	CMakeFiles/prac5.dir/exercise_1.cpp.obj	e66d7e5fa2c2c3ed
+4	253	7012028729413775	CMakeFiles/Task1.dir/ComplexNumber.cpp.obj	8bc03d8e45754cf2
+1	131	7012029665983205	build.ninja	837dfe1d24a116fb
+2	250	7012023962231366	CMakeFiles/prac5.dir/ComplexNumber.cpp.obj	3e7a753dc8e11d53
+2	233	7012017209669355	CMakeFiles/prac5.dir/main.cpp.obj	ed8f46c44c4b0d9f
+1	237	7012028729245735	CMakeFiles/Task1.dir/main.cpp.obj	4212d6a1793b88a4
+253	324	7012028730088860	Task1.exe	1af03270032b8aa0
+5	44	7012030031140572	CMakeFiles/Task3.dir/Game.cpp.obj	61dafee320efe094
+0	241	7012030033118988	CMakeFiles/Task3.dir/main3.cpp.obj	fdac5ba1c48714dd
+241	309	7012030033764596	Task3.exe	9fa5f23d1fcfd8b1

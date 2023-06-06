@@ -1,0 +1,19 @@
+# ninja log v5
+3	326	7049959049012483	CMakeFiles/prac10.dir/Engine/Engine.cpp.obj	71255eb3cae0872e
+8	325	7049959049012483	CMakeFiles/prac10.dir/CarBattery/CarBattery.cpp.obj	7b94a6c9387fa37
+4	372	7049958332470087	CMakeFiles/prac10.dir/main.cpp.obj	41ba16f03df77142
+8	365	7049958332381836	CMakeFiles/prac10.dir/CarPart/CarPart.cpp.obj	2595a57e33430983
+13	382	7049958332584929	CMakeFiles/prac10.dir/Tyre/Tyre.cpp.obj	efbc62decf32f017
+12	958	7049331650889256	CMakeFiles/prac10.dir/MyString/MyString.cpp.obj	45963ae7d1441b72
+326	403	7049959049763650	prac10.exe	a2c24b4941e48446
+8	323	7050006947516219	CMakeFiles/prac10.dir/Tyre/Tyre.cpp.obj	efbc62decf32f017
+16	327	7050006947561514	CMakeFiles/prac10.dir/Car/Car.cpp.obj	ed9ccf3a3fbe1324
+12	329	7050006947576544	CMakeFiles/prac10.dir/FuelTank/FuelTank.cpp.obj	f4a1e32fec606ea1
+4	341	7050006947697528	CMakeFiles/prac10.dir/main.cpp.obj	41ba16f03df77142
+341	425	7050006948513041	prac10.exe	ca720ba0c689c3f7
+5	313	7050007280347087	CMakeFiles/prac10.dir/main.cpp.obj	41ba16f03df77142
+313	390	7050007281084837	prac10.exe	ca720ba0c689c3f7
+3	278	7050007509102300	CMakeFiles/prac10.dir/main.cpp.obj	41ba16f03df77142
+278	354	7050007509843408	prac10.exe	ca720ba0c689c3f7
+3	288	7050007954908482	CMakeFiles/prac10.dir/main.cpp.obj	41ba16f03df77142
+289	365	7050007955651348	prac10.exe	ca720ba0c689c3f7

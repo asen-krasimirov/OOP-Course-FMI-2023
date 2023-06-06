@@ -1,0 +1,17 @@
+# ninja log v5
+11	125	7050823690115579	CMakeFiles/lecture10.dir/TypesOfInheritance.cpp.obj	2e68da2e11912e66
+16	727	7050983572695514	CMakeFiles/lecture10.dir/exe1/Bar/Bar.cpp.obj	32b77e548ddcbbda
+2	272	7052554090695679	CMakeFiles/lecture10.dir/main.cpp.obj	ef8db410c29aa6a3
+44	110	7052555862508301	lecture10.exe	b712e515ea3b3cb2
+17	731	7050932294937207	CMakeFiles/lecture10.dir/exe1/MyString/MyString.cpp.obj	f6e6f51ad3cd309e
+38	1060	7050981775018293	CMakeFiles/lecture10.dir/exe1/AlcoholDrink/AlcoholDrink.cpp.obj	c8984c39628f0b7f
+48	1320	7050981777627732	CMakeFiles/lecture10.dir/exe1/DrinkVector/DrinkVector.cpp.obj	62f16a1943e8a893
+58	1062	7050981775053737	CMakeFiles/lecture10.dir/exe1/Drink/Drink.cpp.obj	893cc74ec753839
+29	1286	7050981777301648	CMakeFiles/lecture10.dir/exe1/AlcoholDrinkVector/AlcoholDrinkVector.cpp.obj	1fc7478deecbd34e
+15	129	7051500177067754	CMakeFiles/lecture10.dir/exe2/SetByCriteria/SetByCriteria.cpp.obj	f333ae13dded935d
+26	907	7051496222627619	CMakeFiles/lecture10.dir/exe2/SetOfNumbers/SetOfNumbers.cpp.obj	c992d7f66481cdea
+8	292	7052553799284499	CMakeFiles/lecture10.dir/InheritanceBig4.cpp.obj	765ba09d810eb53e
+0	43	7052555861866757	CMakeFiles/lecture10.dir/InheritanceChain.cpp.obj	78f32a7588bd65e3
+1	265	7052557247694400	CMakeFiles/lecture10.dir/PassingToFunctions.cpp.obj	61c384dc2e1af582
+2	264	7052557439987507	CMakeFiles/lecture10.dir/PassingToFunctions.cpp.obj	61c384dc2e1af582
+265	331	7052557440626438	lecture10.exe	a1a0b6172166624b

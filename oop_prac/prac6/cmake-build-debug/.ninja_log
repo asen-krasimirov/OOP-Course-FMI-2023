@@ -1,0 +1,9 @@
+# ninja log v5
+6	256	7028580443375234	CMakeFiles/prac6.dir/Set/Set.cpp.obj	530ff76f84784dba
+3	238	7028580744130800	CMakeFiles/prac6.dir/main.cpp.obj	de4b02ac280956fe
+239	309	7028580744796728	prac6.exe	2aa2acd509e97abd
+30	673	7064863512691556	CMakeFiles/prac6.dir/main.cpp.obj	da635ff0df56f25a
+39	714	7064863513126741	CMakeFiles/prac6.dir/Set/Set.cpp.obj	a0c6c41f9b1246e9
+715	925	7064863515189611	prac6.exe	ece309ade0fc5b41
+6	601	7064863825557313	CMakeFiles/prac6.dir/main.cpp.obj	da635ff0df56f25a
+602	776	7064863827252709	prac6.exe	ece309ade0fc5b41

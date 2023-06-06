@@ -1,0 +1,11 @@
+# ninja log v5
+44	1044	7067392873154113	CMakeFiles/task1_2.dir/BaseCriteria/BaseCriteria.cpp.obj	5bbfee7ef1cf38e
+12	1049	7067392873154113	CMakeFiles/task1_2.dir/SetBase/SetBase.cpp.obj	16f6b861f1e03470
+52	1082	7067392873504196	CMakeFiles/task1_2.dir/NoDivisionCriteria/NoDivisionCriteria.cpp.obj	dc8be64ba385c579
+83	1108	7067392873888831	CMakeFiles/task1_2.dir/SingleDivisionCriteria/SingleDivisionCriteria.cpp.obj	8b8a4c0f84591395
+28	1127	7067392874098886	CMakeFiles/task1_2.dir/SetUnion/SetUnion.cpp.obj	e49a5b7fbf4dde3d
+36	1114	7067392873938854	CMakeFiles/task1_2.dir/SetIntersection/SetIntersection.cpp.obj	3e7a32b941ccd7f5
+20	1131	7067392874151930	CMakeFiles/task1_2.dir/SetByCriteria/SetByCriteria.cpp.obj	c1b0b05738aa7833
+23	1217	7068220146722242	CMakeFiles/task1_2.dir/ProgramManager/ProgramManager.cpp.obj	79c51bab8f0117ef
+10	1311	7068220147676449	CMakeFiles/task1_2.dir/main.cpp.obj	6b8cac907a929ab7
+1312	1520	7068220149663861	task1_2.exe	25cd47d64289a31f
