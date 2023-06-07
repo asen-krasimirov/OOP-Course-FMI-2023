@@ -1,6 +1,0 @@
-# ninja log v5
-14	99	7055984126531898	CMakeFiles/homework1.dir/Row.cpp.obj	fedf703308936070
-8	106	7055984126604523	CMakeFiles/homework1.dir/Column.cpp.obj	464f345de233cf0c
-0	400	7055984129543098	CMakeFiles/homework1.dir/main.cpp.obj	7bc6b366423c39b4
-21	496	7055984130511934	CMakeFiles/homework1.dir/TableParser.cpp.obj	41c7eb5bcc7f9b32
-496	605	7055984131554367	homework1.exe	41b0c429d57aeba0
