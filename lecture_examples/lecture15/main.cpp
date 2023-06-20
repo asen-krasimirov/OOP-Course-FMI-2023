@@ -2,7 +2,8 @@
 
 //#include "SingletonFactory/SingletonFactory.h"
 
-#include "DesignPatterns/Builder/Builder.h"
+//#include "DesignPatterns/Builder/Builder.h"
+#include "DesignPatterns/Adapter/Adapter.h"
 
 int main() {
 //    auto factory = SingletonFactory::getInstance();
