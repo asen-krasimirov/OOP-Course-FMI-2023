@@ -3,7 +3,7 @@
 //#include "SingletonFactory/SingletonFactory.h"
 
 //#include "DesignPatterns/Builder/Builder.h"
-#include "DesignPatterns/Adapter/Adapter.h"
+//#include "DesignPatterns/Adapter/Adapter.h"
 
 int main() {
 //    auto factory = SingletonFactory::getInstance();
@@ -14,5 +14,5 @@ int main() {
 
 //    factory->freeInstance();
 
-    testMain();
+//    testMain();
 }
