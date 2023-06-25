@@ -1,0 +1,11 @@
+# ninja log v5
+747	924	7075628801056823	lectrue14.exe	d6a16f00b4762306
+1	114	7075607812253110	CMakeFiles/lectrue14.dir/main.cpp.obj	d80949070c66d242
+1	297	7075633101022477	build.ninja	d9a26a668b2a1170
+5	697	7075612820866275	CMakeFiles/lectrue14.dir/example2.cpp.obj	22bfde052a9eb070
+6	790	7075614862831054	CMakeFiles/lectrue14.dir/example3.cpp.obj	50f36442b2b1f2ae
+6	711	7075622525603780	CMakeFiles/lectrue14.dir/example7.cpp.obj	37868d37e7877baa
+5	781	7075619249995614	CMakeFiles/lectrue14.dir/example4.cpp.obj	cded8e47774766cd
+14	721	7075628799067546	CMakeFiles/lectrue14.dir/example8.cpp.obj	59d19112c0ca8910
+23	730	7075628799158438	CMakeFiles/lectrue14.dir/example11.cpp.obj	299900f9440cba0b
+6	746	7075628799320337	CMakeFiles/lectrue14.dir/example10.cpp.obj	897b1507a791c961
