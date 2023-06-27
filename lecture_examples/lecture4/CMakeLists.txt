@@ -3,4 +3,4 @@ project(lecture4)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(lecture4 exercise_1.cpp)
+add_executable(lecture4 PersonExample.cpp)
