@@ -16,12 +16,14 @@ int main() {
 //    t2.f();
 //    t2.g();
 
-    int num1 = 1;
-    int num2 = 2;
+//    int num1 = 1;
+//    int num2 = 2;
 
-    swap(num1, num2);
+//    swap(num1, num2);
 
-    std::cout << num1;
+//    std::cout << num1;
+
+    printV2();
 
     return 0;
 }

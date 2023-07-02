@@ -9,5 +9,7 @@ add_executable(lecture12
 #        Pair.hpp
 #        Optional.hpp
 
-        ManualCatching
+#        ManualCatching
+
+        Queue.hpp
         )

@@ -5,9 +5,13 @@ set(CMAKE_CXX_STANDARD 17)
 
 add_executable(lecture13
         main.cpp
-        TemplateFunctionSpecification.hpp
-        TemplateClassSpecification.hpp
+#        TemplateFunctionSpecification.hpp
+#        TemplateClassSpecification.hpp
 
-        MultipleInheritanceExample.hpp
-        swap.hpp
+#        MultipleInheritanceExample.hpp
+#        swap.hpp
+
+#        MultipleInheritanceExample2.cpp
+
+        TemplateFunctionSpecification.hpp
         )
