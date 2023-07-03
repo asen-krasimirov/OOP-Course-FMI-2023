@@ -1,6 +1,6 @@
 #pragma once
 
-#include "NaturalNumbersFunction.hpp"
+#include "NaturalNumbersFunction.h"
 
 class ModifiableNaturalNumbersFunction : protected NaturalNumbersFunction {
 private:

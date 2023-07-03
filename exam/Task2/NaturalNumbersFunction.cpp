@@ -1,4 +1,4 @@
-#include "NaturalNumbersFunction.hpp"
+#include "NaturalNumbersFunction.h"
 
 #include <iostream>
 
