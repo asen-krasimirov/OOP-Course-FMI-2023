@@ -23,7 +23,14 @@ int main() {
 
 //    std::cout << num1;
 
-    printV2();
+//    printV2();
+
+    Test<char> t;
+    t.g();
+
+    Test<int> *t1;
+    t1->f();
+    reinterpret_cast<Test<char>*>(t1)->g();
 
     return 0;
 }

@@ -14,9 +14,13 @@ int b = static_cast<int>(f); //explicit static_cast
 class Base {};
 class Derived : public Base {};
 
+class A {
+};
+
 Derived d1;
 Base* b1 = (Base*)(&d1);
 Base* b2 = static_cast<Base*>(&d1);
+//Base* b3 = static_cast<A*>(&d1); // not working- compile error
 
 /*
 class Base {};
