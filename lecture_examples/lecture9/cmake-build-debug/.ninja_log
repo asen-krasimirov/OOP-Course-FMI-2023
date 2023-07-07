@@ -1,6 +1,0 @@
-# ninja log v5
-1	767	7046428210672043	CMakeFiles/lecture9.dir/CompositionMoveSemantics.cpp.obj	3f6b412f727e5994
-771	1109	7046428214047075	lecture9.exe	dacf1630cbb14a66
-1	342	7047598163662964	CMakeFiles/lecture9.dir/Vector(with_move)/Vector.cpp.obj	cd7d654258429ca5
-2	275	7047598342524280	CMakeFiles/lecture9.dir/main.cpp.obj	43cdb35ebcd4bc8d
-275	353	7047598343284622	lecture9.exe	b39c527c2c0d6714
