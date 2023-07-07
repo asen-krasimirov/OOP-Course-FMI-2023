@@ -1,0 +1,6 @@
+# ninja log v5
+8	675	7032147575939396	CMakeFiles/lecture7.dir/main.cpp.obj	d24c89ff6707419c
+676	876	7032147577878555	lecture7.exe	bb67d4b030381872
+37	862	7031906305875792	CMakeFiles/lecture7.dir/MyString/MyString.cpp.obj	41d17b5d59926ea5
+8	740	7064860206015536	build.ninja	12d2e711b0949b14
+16	749	7032146557822132	CMakeFiles/lecture7.dir/StringPool/StringPool.cpp.obj	780bf3f3aeaa9d38
